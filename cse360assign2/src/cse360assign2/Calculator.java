@@ -31,7 +31,7 @@ public class Calculator
 	 */
 	public int getTotal () 
 	{
-		return 0;
+		return total;
 	}
 	
 	/**
@@ -41,7 +41,7 @@ public class Calculator
 	 */
 	public void add (int value) 
 	{
-		
+		total += value;
 	}
 	
 	/**
@@ -51,7 +51,7 @@ public class Calculator
 	 */
 	public void subtract (int value) 
 	{
-		
+		total -= value;
 	}
 	
 	/**
@@ -61,7 +61,7 @@ public class Calculator
 	 */
 	public void multiply (int value) 
 	{
-		
+		total *= value;
 	}
 	
 	/**
@@ -71,7 +71,14 @@ public class Calculator
 	 */
 	public void divide (int value) 
 	{
-		
+		if(value == 0)
+		{
+			total = 0;
+		}
+		else
+		{
+			total /= value;
+		}
 	}
 	/**
 	 * Prints a string of the calculator's history
