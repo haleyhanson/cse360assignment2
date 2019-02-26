@@ -18,10 +18,12 @@ public class Calculator
 {
 
 	private int total;
+	private String historyStr;		// string tracking the operation history
 	
 	public Calculator () 
 	{
 		total = 0;  // not needed - included for clarity
+		historyStr = "0";
 	}
 	
 	/**
@@ -42,6 +44,7 @@ public class Calculator
 	public void add (int value) 
 	{
 		total += value;
+		historyStr += " + " + value;
 	}
 	
 	/**
@@ -52,6 +55,7 @@ public class Calculator
 	public void subtract (int value) 
 	{
 		total -= value;
+		historyStr += " - " + value;
 	}
 	
 	/**
@@ -62,6 +66,7 @@ public class Calculator
 	public void multiply (int value) 
 	{
 		total *= value;
+		historyStr += " * " + value;
 	}
 	
 	/**
@@ -74,19 +79,21 @@ public class Calculator
 		if(value == 0)
 		{
 			total = 0;
+			historyStr = "0";
 		}
 		else
 		{
 			total /= value;
+			historyStr += " + " + value;
 		}
 	}
 	/**
 	 * Prints a string of the calculator's history
 	 * 
-	 * @return  	 string containing history of operations
+	 * @return historyStr	 string containing history of operations
 	 */
 	public String getHistory () 
 	{
-		return "";
+		return historyStr;
 	}
 }
